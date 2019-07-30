@@ -11,7 +11,4 @@ install:
   - npm run generate
 
 script:
-  - echo "Skipping tests"
-
-after_success:
-  - "find dist -name '*' -type f -exec curl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://$FTP_HOST$FTP_REMOTE_ROOT/{} \\;"
+  - npm run deploy
