@@ -4,9 +4,7 @@ node_js:
 
 install:
   - npm install
-
-script:
   - npm run generate
 
 after_success:
- - "find dist -name '*' -type f -exec curl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://$FTP_HOST$FTP_REMOTE_ROOT/{} \\;"
+  - "find dist -name '*' -type f -exec curl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://$FTP_HOST$FTP_REMOTE_ROOT/{} \\;"
