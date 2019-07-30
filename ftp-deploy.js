@@ -5,7 +5,7 @@ var config = {
   user: process.env.FTP_USER,
   password: process.env.FTP_PASSWORD,
   host: process.env.FTP_HOST,
-  localRoot: "/dist",
+  localRoot: "dist/",
   remoteRoot: process.env.FTP_REMOTE_ROOT,
   include: ["*"],
   deleteRemote: true,
