@@ -17,4 +17,6 @@ script:
   - echo "Skipping tests"
 
 after_success:
+  - mv deploy.sh dist/deploy.sh
+  - cd dist
   - sh deploy.sh
