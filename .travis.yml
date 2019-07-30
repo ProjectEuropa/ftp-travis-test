@@ -10,8 +10,11 @@ install:
   - npm install
   - npm run generate
 
+before_install:
+  - chmod +x deploy.sh
+
 script:
   - echo "Skipping tests"
 
 after_success:
-  - ./deploy.sh
+  - deploy.sh
