@@ -11,3 +11,7 @@ var config = {
   deleteRemote: true,
   forcePasv: false
 };
+
+ftpDeploy.deploy(config)
+    .then(res => console.log('finished:', res))
+    .catch(err => console.log(err))
