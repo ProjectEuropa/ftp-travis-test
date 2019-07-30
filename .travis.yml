@@ -11,4 +11,7 @@ install:
   - npm run generate
 
 script:
-  - npm run deploy
+  - echo "Skipping tests"
+
+after_success:
+  - ./deploy.sh
