@@ -1,5 +1,6 @@
 var FtpDeploy = require("ftp-deploy");
 var ftpDeploy = new FtpDeploy();
+require('dotenv').config({path: __dirname + '/.env'})
 
 var config = {
   user: process.env.FTP_USER,
