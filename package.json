@@ -9,7 +9,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "node ftp-deploy.js"
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.1",
