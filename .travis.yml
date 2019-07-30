@@ -9,4 +9,4 @@ script:
   - npm run generate
 
 after_success:
- - "find dist -type f -exec curl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://$FTP_HOST/$FTP_REMOTE_ROOT/{} \\;"
+ - "find dist -type f -exec curl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://$FTP_HOST$FTP_REMOTE_ROOT/{} \\;"
