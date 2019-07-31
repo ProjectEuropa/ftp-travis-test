@@ -12,6 +12,7 @@ install:
 
 before_install:
   - chmod +x deploy.sh
+  - sudo apt update
   - sudo apt install -y lftp
 
 script:
