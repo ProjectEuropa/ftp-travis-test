@@ -1,8 +1,4 @@
 #!/bin/bash
 
-files=*
-for f in $files
-  do
-    echo "Uploading $f";
-    curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T $f ftp://$FTP_HOST$FTP_REMOTE_ROOT/$f \;
-  done
+find . -type d \( -path "./.*" -o -path "./node_modules" \) -prune -o -name "*" -print -exec curl --ftp-create-dirs -T {} ftp://$FTP_HOST$FTP_REMOTE_ROOT/ --user ${FTP_USER}:${FTP_PASSWORD} \;
+
