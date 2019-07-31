@@ -12,7 +12,7 @@ install:
 
 before_install:
   - chmod +x deploy.sh
-  - apt install -y lftp
+  - sudo apt install -y lftp
 
 script:
   - echo "Skipping tests"
