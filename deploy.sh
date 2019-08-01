@@ -1,3 +1,11 @@
 #!/bin/bash
 
-lftp -c "set ftp:ssl-allow no; open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST; mirror -Rev dist/. --ignore-time --parallel=10"
+set -e
+set dns:order "inet"
+
+lftp -f "
+open ftp://$FTP_HOST
+user $FTP_USER $FTP_PASSWORD
+mirror --continue --reverse --delete dist/. /$FTP_REMOTE_ROOT/
+bye
+"
