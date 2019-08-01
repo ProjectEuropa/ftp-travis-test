@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$ lftp -f setting.conf
+lftp -f setting.conf
