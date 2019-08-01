@@ -1,9 +1,3 @@
 #!/bin/bash
 
-lftp -f "
-set ssl:verify-certificate no
-set ftp:ssl-allow no
-set dns:order 'inet'
-open $FTP_USER:$FTP_PASSWORD@$FTP_HOST
-mirror -v -e -R dist/ /$FTP_REMOTE_ROOT
-"
+lftp -c "set ftps:initial-prot ''; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate false; open ftp://$FTP_USER:$FTP_PASSWORD@$FTP_HOST:21; mirror -eRv dist /$FTP_REMOTE_ROOT; quit;"
