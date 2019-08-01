@@ -1,7 +1,11 @@
 #!/bin/bash
 
+#!/bin/bash
+
 set -e
 set dns:order "inet"
+set ssl:verify-certificate no
+set ftp:ssl-allow no
 
 lftp -f "
 open ftp://$FTP_HOST
