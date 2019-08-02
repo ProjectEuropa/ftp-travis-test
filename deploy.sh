@@ -1,3 +1,3 @@
 #!/bin/bash
 
-lftp -c "set ftp:ssl-allow no; open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST; mirror -R dist /$FTP_REMOTE_ROOT/ --parallel=10"
+lftp -d -c "set ftp:ssl-allow no; open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST; mirror -X dist/nuxt -R dist /$FTP_REMOTE_ROOT/ --parallel=10"
